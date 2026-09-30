@@ -1,0 +1,35 @@
+const int trigPin = 27; 
+const int echoPin = 26;
+
+#define SOUND_SPEED 0.034 // cm/uS
+
+long duracao/
+float distanciaCM;
+
+void setup () {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(115200);
+}
+
+void loop() {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH); 
+  delayMicrosenconds(10);
+  digitalWrite(trigPin, LOW);
+
+  duracao = pulseIn (echoPi,HIGH);
+  distanciaCM = duracao * SOUND_SPEED/2;
+
+  if (distancia < 2) {
+    distanciaCM = 2;
+    } else if (distanciaCM > 400) {
+    distanciaCM = 400;
+  }
+
+  Serial.print("Distância (cm): ");
+  Serial.println(distanciaCM);
+
+  delay(1000);
+}
